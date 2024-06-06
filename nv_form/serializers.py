@@ -1,12 +1,14 @@
 from rest_framework import serializers, validators
+from .models import User
+
 
 
 
 
 class UserSerializer(serializers.Serializer):
     
-    # fields = ['first_name', 'last_name', 'email', 'phone_number', 'location', 'university', 'age_range', 'sdg_interest', 'attendance_type', 'academic_level', 'academic_major', 'how_hear_about_ysf', 'contact_preference', 'employment_status', 'expectations', 'shirt_size']
-    fields = '__all__'
+    fields = ['fullname', 'email_address', 'phone_number', 'gender', 'age', 'volunteering_experience', 'member_of_aiesec', 'travel_from', 'prefer_location', 'preferred_project', 'health_issues', 'please_specify','who_do_we_contact','emergency_contact','anything_else_to_know']
+    # fields = '__all__'
 
 
 
