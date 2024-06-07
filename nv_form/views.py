@@ -15,29 +15,30 @@ class UserCreateView(APIView):
     
     def post(self, request):
         serializer = UserSerializer(data=request.data)
+        
         if serializer.is_valid():
             # define the scope
             scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 
             credential_file = 'key.json'
-
+            
             # add credentials to the account
             creds = ServiceAccountCredentials.from_json_keyfile_name(credential_file, scopes=scope)
-
+            
             # authorize the clientsheet
             client = gspread.authorize(creds)
-
+            
             # get the instance of the Spreadsheet
             sheet = client.open('National Volunteer')
-
+            
             # get the first sheet of the Spreadsheet
             sheet_instance = sheet.get_worksheet(0)
-
+            
             user = list(serializer.data.values())
             sheet_instance.append_row(user)
             
+            # send email
 
-            #send email
             
             # return success response
             return Response(serializer.data, status=status.HTTP_201_CREATED)
