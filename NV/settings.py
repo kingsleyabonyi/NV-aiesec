@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o#0&qo-08_l%j0__jv6rw*&cw(^d2oxd*begg&50p8j7gl)(3-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['nv-aiesec.onrender.com','127.0.0.1' , '*']
 
@@ -138,6 +138,14 @@ CORS_ORIGIN_WHITELIST = [
 
 CORS_ALLOW_METHOD = [
     'GET', 'POST', 'PUT', 'DELETE'
+]
+
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "authorization",
+    "content-type",
+    "x-csrftoken",
+    "x-requested-with",
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
