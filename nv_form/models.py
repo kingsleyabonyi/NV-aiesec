@@ -14,7 +14,7 @@ class User(models.Model):
     prefer_location = models.CharField(max_length=200)
     preferred_project = models.CharField(max_length=100)
     health_issues = models.BooleanField(default=False)
-    please_specify = models.CharField(max_length=200)
+    please_specify = models.CharField(max_length=200, blank=True)
     who_do_we_contact = models.CharField(max_length=200)
     emergency_contact = models.CharField(max_length=100)
     anything_else_to_know = models.CharField(max_length=200)
