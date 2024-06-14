@@ -8,7 +8,7 @@ class User(models.Model):
     phone_number = models.CharField(max_length=100)
     gender = models.CharField(max_length=100)
     age = models.CharField(max_length=100)
-    volunteering_experience = models.BooleanField(default=False)
+    volunteering_experience = models.CharField(max_length=100)
     member_of_aiesec = models.BooleanField(default=False)
     travel_from = models.CharField(max_length=200,)
     prefer_location = models.CharField(max_length=200)
