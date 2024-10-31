@@ -18,5 +18,6 @@ class User(models.Model):
     who_do_we_contact = models.CharField(max_length=200)
     emergency_contact = models.CharField(max_length=100)
     anything_else_to_know = models.CharField(max_length=200, blank=True)
+    date_time = models.DateTimeField(auto_now_add=True)
 
 
